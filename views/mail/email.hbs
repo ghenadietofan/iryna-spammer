@@ -1,0 +1,40 @@
+<div class="container">
+    <h1>Editing contact</h1>
+    <div class="row row-cols-2 gy-2">
+        <div class="col">
+            <form action="/mailer" method="POST" autocomplete="off" class="box">
+                <input type="hidden" name="_id" >
+                <div class="form-group col-md-8">
+                    <label class="email" >Surname
+                    <input type="text" class="form-control" name="surname" placeholder="Surname" >
+                    </label>
+                </div>
+                <div class="form-group col-md-8">
+                    <label class="email">Name
+                    <input type="text" class="form-control" name="name" placeholder="Name" >
+                    </label>
+                </div>
+                <div class="form-group col-md-8">
+                    <label class="email">Secondname
+                    <input type="text" class="form-control" name="secondname" placeholder="Secondname">
+                        </label>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label class="email">Email</label>
+                        <input type="text" class="form-control" name="email" placeholder="Email" >
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="email">City</label>
+                        <input type="text" class="form-control" name="city" placeholder="City" >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-primary">Update contact</button>
+                    <a class="btn btn-secondary" href="/mailer/list">See all contacts</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

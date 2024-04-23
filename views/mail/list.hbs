@@ -1,0 +1,105 @@
+<div class="container">
+    <h1>Welcome to mail-spammer!</h1>
+    <div class="row">
+        <div class="col-md-8 gy-2">
+            <div class="box">
+                <h2><a class="btn btn-secondary" href="/mailer"><i class="fas fa-plus"></i> Create contact</a></h2>
+                <table class="table  table-responsive table-sm table-light">
+                    <thead>
+                    <tr>
+                        <th>Surname</th>
+                        <th>Name</th>
+                        <th>Secondname</th>
+                        <th>Email</th>
+                        <th>City</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each list}}
+                        <tr>
+                            <td>{{this.surname}}</td>
+                            <td>{{this.name}}</td>
+                            <td>{{this.secondname}}</td>
+                            <td>{{this.email}}</td>
+                            <td>{{this.city}}</td>
+                            <td>
+                                <a href="/mailer/{{this._id}}"><i class="fas fa-edit" aria-hidden="true"></i></a>
+                                <a href="/mailer/delete/{{this._id}}"><i class="fas fa-trash fa-lg" aria-hidden="true"></i></a>
+                            </td>
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="box">
+                <div class="form-row">
+                    <form method="POST" action="send">
+                        <div class="form-group">
+                            <div class="form-row">
+                                <label for="text" class="form-label">Enter some text:</label>
+                                <div class="input-group-text">
+                                    <textarea id="message" name="message" class="form-control" rows="3" placeholder="Enter message"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <label for="text" class="form-label">Some templates:</label>
+                                <div class="card" onclick="updateMessage(this)">
+                                    <div class="card-body">
+                                        <div class="card-title">Password theft :)</div>
+                                        <div class="card-text">I will steal your password if you follow this link: https://distedu.ukma.edu.ua</div>
+                                    </div>
+                                </div>
+                                <div class="card" onclick="updateMessage(this)">
+                                    <div class="card-body">
+                                        <div class="card-title">Advertising mailing</div>
+                                        <div class="card-text">This is the most useless ad you've ever seen)</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="box">
+                                    <p class="message">{{msg}}</p>
+                                    <button type="submit" class="btn btn-secondary"><i class="fa fa-envelope"></i> Send</button>
+                                    <a class="btn btn-secondary" href="/mailer/list"><i class="fas fa-arrow-left"></i> Return</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    function updateMessage(cardElement) {
+        var cardText = cardElement.querySelector(".card-text").textContent;
+        var messageTextarea = document.getElementById("message");
+        if (messageTextarea) {
+            messageTextarea.value = cardText;
+        }
+    }
+</script>
+
+

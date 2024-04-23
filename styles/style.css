@@ -1,0 +1,50 @@
+body {
+  margin-top: 40px; 
+  background-color: lightgray;
+  }
+
+  
+.box {
+  background-color: #D7AFDF;
+  min-height: 50px;
+  font-size: 1rem;
+}
+
+.message {
+  font: bold 30px arial;
+  color: black;
+}
+
+.form-label {
+  margin-left: 10px;
+}
+
+.card {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.btn-secondary {
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.form-control {
+  outline:none;
+  border: 0 none;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.btn-primary {
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.email {
+  margin-left: 10px;
+  margin-top: 10px;
+  font: bold 20px arial;
+}
